@@ -1,0 +1,93 @@
+name: Firebase Distribution
+
+on:
+  push:
+    branches: [main, develop]
+    tags: ['v*']
+
+env:
+  FLUTTER_VERSION: '3.32.5'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Run tests
+        run: flutter test
+
+  build-and-distribute:
+    needs: test
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - env: dev
+            app_id: ${{ secrets.FIREBASE_ANDROID_APP_ID_DEV }}
+          - env: staging
+            app_id: ${{ secrets.FIREBASE_ANDROID_APP_ID_STAGING }}
+          - env: prod
+            app_id: ${{ secrets.FIREBASE_ANDROID_APP_ID_PROD }}
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Build APK
+        run: |
+          flutter build apk --release \
+          --dart-define-from-file=.env/${{ matrix.env }}.json \
+          --flavor ${{ matrix.env }}
+
+      - name: Upload to Firebase App Distribution
+        uses: wzieba/Firebase-Distribution-Github-Action@v1
+        with:
+          appId: ${{ matrix.app_id }}
+          serviceCredentialsFileContent: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+          groups: "testers"
+          file: build/app/outputs/flutter-apk/app-${{ matrix.env }}-release.apk
+        env:
+          FIREBASE_CLI_EXPERIMENTS: appdistribution:get-testers
+
+  security-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: CodeQL Analysis
+        uses: github/codeql-action/init@v2
+        with:
+          languages: dart
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v2
+
+      - name: Secret Scanning
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Detect secrets
+        uses: trilom/fileio-secrets-scanner@v1
+        with:
+          path: .
+          token: ${{ github.token }}

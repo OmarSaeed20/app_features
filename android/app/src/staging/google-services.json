@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "663414934306",
+    "project_id": "compact-haiku-424413-j3",
+    "storage_bucket": "compact-haiku-424413-j3.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:663414934306:android:0f3c143d45a83e80a1337b",
+        "android_client_info": {
+          "package_name": "com.example.drop_me"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAuFnvjVbi0SRBxbq6XwfuSwgO5WIYVlHg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:663414934306:android:638a04260231b8d8a1337b",
+        "android_client_info": {
+          "package_name": "com.example.drop_me.dev"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAuFnvjVbi0SRBxbq6XwfuSwgO5WIYVlHg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:663414934306:android:bd19ad7180c8b884a1337b",
+        "android_client_info": {
+          "package_name": "com.example.drop_me.staging"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAuFnvjVbi0SRBxbq6XwfuSwgO5WIYVlHg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

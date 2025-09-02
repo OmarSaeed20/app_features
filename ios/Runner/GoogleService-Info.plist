@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyBoaBtz9d05vuDif2dHJ0GMoGqXV0C7UTM</string>
+	<key>GCM_SENDER_ID</key>
+	<string>663414934306</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.dropMe</string>
+	<key>PROJECT_ID</key>
+	<string>compact-haiku-424413-j3</string>
+	<key>STORAGE_BUCKET</key>
+	<string>compact-haiku-424413-j3.firebasestorage.app</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:663414934306:ios:11f10f8f024c2fa5a1337b</string>
+</dict>
+</plist>

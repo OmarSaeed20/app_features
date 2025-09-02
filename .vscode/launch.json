@@ -1,56 +1,26 @@
 {
-      "version": "0.2.0",
-      "configurations": [
-            {
-                  "name": "Flutter",
-                  "request": "launch",
-                  "type": "dart",
-                  "flutterMode": "debug",
-                  "args": []
-            },
-            {
-                  "name": "Flutter (profile mode)",
-                  "request": "launch",
-                  "type": "dart",
-                  "flutterMode": "profile",
-                  "args": []
-            },
-            {
-                  "name": "Flutter (release mode)",
-                  "request": "launch",
-                  "type": "dart",
-                  "flutterMode": "release",
-                  "args": []
-            },
-            {
-                  "name": "Development",
-                  "request": "launch",
-                  "type": "dart",
-                  "program": "lib/main_dev.dart",
-                  "args": [
-                        "--flavor",
-                        "dev"
-                  ]
-            },
-            {
-                  "name": "Staging",
-                  "request": "launch",
-                  "type": "dart",
-                  "program": "lib/main_staging.dart",
-                  "args": [
-                        "--flavor",
-                        "staging"
-                  ]
-            },
-            {
-                  "name": "Production",
-                  "request": "launch",
-                  "type": "dart",
-                  "program": "lib/main.dart",
-                  "args": [
-                        "--flavor",
-                        "prod"
-                  ]
-            }
-      ]
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "App Feature Dev",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main_dev.dart",
+      "args": ["--flavor", "dev"]
+    },
+    {
+      "name": "App Feature Staging",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main_staging.dart",
+      "args": ["--flavor", "staging"]
+    },
+    {
+      "name": "App Feature Production",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "args": ["--flavor", "prod"]
+    }
+  ]
 }
