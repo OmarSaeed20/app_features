@@ -1,0 +1,10 @@
+{
+      "cmake.ignoreCMakeListsMissing": true,
+      "dart.analysisServerFolding": false,
+      "dart.lineLength": 120,
+      "dart.showTodos": false,
+      "java.configuration.updateBuildConfiguration": "automatic",
+      "yaml.schemas": {
+            "https://www.schemastore.org/dart-test.json": "file:///d%3A/drop-me/newdropme/analysis_options.yaml"
+      }
+}
