@@ -125,7 +125,7 @@ android {
                 storePassword = keystoreProperties.getProperty("storePassword")
             } else {
                 logger.warn("Release signing configuration not found, using debug")
-                // Fallback to debug signing
+                // *Fallback to debug signing
                 // this.keyAlias = "androiddebugkey"
                 // this.keyPassword = "android"
                 // this.storeFile = rootProject.file("${System.getProperty("user.home")}/.android/debug.keystore")
